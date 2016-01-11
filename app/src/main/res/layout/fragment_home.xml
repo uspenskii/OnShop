@@ -4,6 +4,8 @@
     android:padding="0.5dp"
     android:layout_height="fill_parent" >
 
+
+    <!--TODO все едет под другим dpi -->
     <LinearLayout
 
         android:layout_width="fill_parent"
