@@ -1,13 +1,16 @@
 package com.uspenskii.onshop.fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 
 import com.uspenskii.onshop.R;
+import com.uspenskii.onshop.Smartphonepage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,11 +47,15 @@ public class FragmentHome extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
+
         return fragment;
     }
 
     public FragmentHome() {
         // Required empty public constructor
+
+
     }
 
     @Override
@@ -58,13 +65,27 @@ public class FragmentHome extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        GridLayout gridLayout1 = (GridLayout) rootView.findViewById(R.id.gridLayout1);
+        gridLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(container.getContext(), Smartphonepage.class);
+                startActivity(intent);
+
+            }
+        });
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -93,7 +114,8 @@ public class FragmentHome extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+
+
     }
 
 }
-
