@@ -11,12 +11,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class CustomAdapter extends BaseAdapter{
-    String [] result;
+    ArrayList<String> result;
     Context context;
-    Drawable[] imageId;
+    ArrayList<Drawable> imageId;
     private static LayoutInflater inflater=null;
-    public CustomAdapter(Context mainActivity, String[] names, Drawable[] images) {
+    public CustomAdapter(Context mainActivity, ArrayList<String> names, ArrayList<Drawable> images) {
         // TODO Auto-generated constructor stub
         result=names;
         context= mainActivity;
@@ -27,7 +29,7 @@ public class CustomAdapter extends BaseAdapter{
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return result.length;
+        return result.size();
     }
 
     @Override
@@ -55,14 +57,14 @@ public class CustomAdapter extends BaseAdapter{
         rowView = inflater.inflate(R.layout.custom_menu_item, null);
         holder.tv=(TextView) rowView.findViewById(R.id.item_name);
         holder.img=(ImageView) rowView.findViewById(R.id.item_imageView);
-        holder.tv.setText(result[position]);
-        holder.img.setImageDrawable(imageId[position]);
+        holder.tv.setText(result.get(position));
+        holder.img.setImageDrawable(imageId.get(position));
 
         rowView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "You Clicked "+result.get(position), Toast.LENGTH_LONG).show();
             }
         });
         return rowView;

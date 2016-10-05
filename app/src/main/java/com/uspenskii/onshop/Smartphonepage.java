@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Smartphonepage extends AppCompatActivity {
     Context context = this;
@@ -52,11 +53,11 @@ public class Smartphonepage extends AppCompatActivity {
 
                     final JsonArray jsonArray = rootobj.get("GoodsList").getAsJsonArray();
 
-                    final Drawable images[] = new Drawable[100];
-                    final String names[] = new String[100];
+                    final ArrayList<Drawable> images = new ArrayList<>();
+                    final ArrayList<String> names = new ArrayList<>();
                     for (int i = 0; i < jsonArray.size(); i++) {
-                        images[i] = new BitmapDrawable(getResources(), LoadImageFromWebOperations(String.valueOf(jsonArray.get(i).getAsJsonObject().get("image").getAsString())));
-                        names[i] = jsonArray.get(i).getAsJsonObject().get("text").getAsString();
+                        images.add(new BitmapDrawable(getResources(), LoadImageFromWebOperations(String.valueOf(jsonArray.get(i).getAsJsonObject().get("image").getAsString()))));
+                        names.add( jsonArray.get(i).getAsJsonObject().get("text").getAsString());
                     }
 
 
