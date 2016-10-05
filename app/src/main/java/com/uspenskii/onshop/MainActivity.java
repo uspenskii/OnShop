@@ -1,6 +1,7 @@
 package com.uspenskii.onshop;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridLayout;
 
 import com.uspenskii.onshop.fragments.FragmentAbout;
 import com.uspenskii.onshop.fragments.FragmentHome;
@@ -29,13 +31,22 @@ public class MainActivity extends AppCompatActivity
     FragmentSettings fsettings;
     FragmentShop fshop;
     FragmentUser fuser;
-    //hello world!
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        GridLayout gridLayout1 = (GridLayout) findViewById(R.id.gridLayout1);
+        gridLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Smart.class);
+                startActivity(intent);
+            }
+        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
