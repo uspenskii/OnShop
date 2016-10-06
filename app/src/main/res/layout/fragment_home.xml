@@ -1,57 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:padding="0.5dp"
-    android:layout_height="fill_parent" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout
 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="fill_parent"
-        android:layout_height="512dp"
-        android:gravity="center"
-        android:background="#888"
-        android:textColor="#fff"
-        android:textSize="30dip"
-        android:layout_centerHorizontal="true" />
 
-    <GridLayout
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/gridLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="429dp"
-        android:columnCount="3"
-        android:rowCount="3"
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
 
-        tools:context=".MainActivity"
-        android:background="#e5e2e2"
-        android:paddingTop="2dp"
-        android:paddingRight="1dp"
-        android:paddingLeft="1dp"
-        android:stretchMode="columnWidth">
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:id="@+id/tableLayout2">
 
-        <GridLayout
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        <RelativeLayout
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout1"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:columnCount="1"
-            android:rowCount="2"
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
             tools:context=".MainActivity"
             android:background="#4CAF50"
-            android:layout_gravity="fill"
-            android:padding="5dp">
 
-            <ImageButton
-                android:id="@+id/smartphones"
-                android:background="@android:color/transparent"
-                android:src="@drawable/s1"
-                android:layout_gravity="center" />
+            android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -62,26 +45,42 @@
                 android:textSize="15dp"
                 android:textIsSelectable="false"
                 android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
+                android:textColor="#ffffff"
+                android:layout_below="@+id/smartphones"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+                android:layout_alignParentEnd="false" />
 
-        <GridLayout
+            <ImageButton
+                android:id="@+id/smartphones"
+                android:background="@android:color/transparent"
+                android:src="@drawable/s1"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout2"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:columnCount="1"
-            android:rowCount="2"
+            android:id="@+id/RelativeLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
             tools:context=".MainActivity"
             android:background="#00BCD4"
-            android:layout_gravity="fill"
+
             android:padding="5dp">
 
             <ImageButton
                 android:id="@+id/tablets"
                 android:background="@android:color/transparent"
                 android:src="@drawable/tablets"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -91,26 +90,33 @@
                 android:id="@+id/textView2"
                 android:textSize="15dp"
                 android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
+                android:textColor="#ffffff"
+                android:layout_below="@+id/tablets"
+                android:layout_centerHorizontal="true" />
 
-        <GridLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout3"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:columnCount="1"
-            android:rowCount="2"
+            android:id="@+id/RelativeLayout3"
+            android:layout_width="wrap_content"
+
+            android:layout_height="120dp"
             tools:context=".MainActivity"
             android:background="#FF9800"
-            android:layout_gravity="fill"
+
             android:padding="5dp">
 
             <ImageButton
                 android:id="@+id/notebooks"
                 android:background="@android:color/transparent"
                 android:src="@drawable/notebooks"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="23dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -120,188 +126,225 @@
                 android:id="@+id/textView3"
                 android:textSize="15dp"
                 android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
+                android:textColor="#ffffff"
+                android:layout_below="@+id/notebooks"
+                android:layout_alignLeft="@+id/notebooks"
+                android:layout_alignStart="@+id/notebooks" />
+        </RelativeLayout>
 
-        <GridLayout
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout4"
-            android:layout_width="111dp"
-            android:layout_height="140dp"
-            android:layout_gravity="fill"
-            android:columnCount="1"
-            android:rowCount="2"
-            tools:context=".MainActivity"
-            android:background="#9E9E9E"
-            android:padding="5dp">
 
-            <ImageButton
-                android:id="@+id/tv"
-                android:background="@android:color/transparent"
-                android:src="@drawable/tv"
-                android:layout_gravity="center" />
+    </TableRow>
 
-            <TextView
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+
+            <RelativeLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Телевизоры"
-                android:id="@+id/textView4"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
+                android:layout_height="120dp"
+                tools:context=".MainActivity"
+                android:background="#9E9E9E"
+                android:padding="5dp">
 
-        <GridLayout
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout5"
-            android:layout_width="111dp"
-            android:layout_height="140dp"
-            android:layout_gravity="fill"
-            android:columnCount="1"
-            android:rowCount="2"
-            tools:context=".MainActivity"
-            android:background="#FF5722"
-            android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Телевизоры"
+                    android:id="@+id/textView4"
+                    android:textSize="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ffffff"
+                    android:layout_below="@+id/tv"
+                    android:layout_centerHorizontal="true" />
 
-            <ImageButton
-                android:id="@+id/cameras"
-                android:background="@android:color/transparent"
-                android:src="@drawable/cameras"
-                android:layout_gravity="center"
+                <ImageButton
+                    android:id="@+id/tv"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/tv"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RelativeLayout5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="120dp"
+                tools:context=".MainActivity"
+                android:background="#FF5722"
+                android:padding="5dp">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Камеры"
+                    android:id="@+id/textView5"
+                    android:textSize="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true" />
+
+                <ImageButton
+                    android:id="@+id/cameras"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/cameras"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Камеры"
-                android:id="@+id/textView5"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
+                android:layout_height="120dp"
+                tools:context=".MainActivity"
+                android:background="#9C27B0"
+                android:padding="5dp"
+                android:paddingLeft="4dp">
 
-        <GridLayout
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout6"
-            android:layout_width="111dp"
-            android:layout_height="140dp"
-            android:layout_gravity="fill"
-            android:columnCount="1"
-            android:rowCount="2"
-            tools:context=".MainActivity"
-            android:background="#9C27B0"
-            android:padding="5dp"
-            android:paddingLeft="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Часы"
+                    android:id="@+id/textView6"
+                    android:textSize="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ffffff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/watches"
+                    android:layout_marginBottom="0dp"
+                    android:layout_alignParentEnd="false" />
 
-            <ImageButton
-                android:id="@+id/watches"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:src="@drawable/watches"
-                android:layout_gravity="center" />
+                <ImageButton
+                    android:id="@+id/watches"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:src="@drawable/watches"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@+id/textView6"
+                    android:layout_alignStart="@+id/textView6" />
+            </RelativeLayout>
+        </TableRow>
 
-            <TextView
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Часы"
-                android:id="@+id/textView6"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
-        <GridLayout
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout7"
-            android:layout_width="111dp"
-            android:layout_height="140dp"
-            android:layout_gravity="fill"
-            android:columnCount="1"
-            android:rowCount="2"
-            tools:context=".MainActivity"
-            android:background="#8BC34A"
-            android:padding="5dp">
+                android:layout_height="120dp"
+                tools:context=".MainActivity"
+                android:background="#8BC34A"
+                android:padding="5dp">
 
-            <ImageButton
-                android:id="@+id/computers"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:src="@drawable/computers"
-                android:layout_gravity="center" />
+                <ImageButton
+                    android:id="@+id/computers"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:src="@drawable/computers"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Компьютеры"
+                    android:id="@+id/textView7"
+                    android:textSize="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ffffff"
+                    android:layout_below="@+id/computers"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout8"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Компьютеры"
-                android:id="@+id/textView7"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
-        <GridLayout
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout8"
-            android:layout_width="111dp"
-            android:layout_height="140dp"
-            android:layout_gravity="fill"
-            android:columnCount="1"
-            android:rowCount="2"
-            tools:context=".MainActivity"
-            android:background="#FFEB3B"
-            android:padding="5dp">
+                android:layout_height="120dp"
+                tools:context=".MainActivity"
+                android:background="#FFEB3B"
+                android:padding="5dp">
 
-            <ImageButton
-                android:id="@+id/headphones"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:src="@drawable/headphones"
-                android:layout_gravity="center" />
+                <ImageButton
+                    android:id="@+id/headphones"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:src="@drawable/headphones"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Наушники"
+                    android:id="@+id/textView8"
+                    android:textSize="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ffffff"
+                    android:layout_below="@+id/headphones"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout9"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Наушники"
-                android:id="@+id/textView8"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
-        <GridLayout
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/gridLayout9"
-            android:layout_width="111dp"
-            android:layout_height="140dp"
-            android:layout_gravity="fill"
-            android:columnCount="1"
-            android:rowCount="2"
-            tools:context=".MainActivity"
-            android:background="#FFC107"
-            android:padding="5dp">
+                android:layout_height="120dp"
+                tools:context=".MainActivity"
+                android:background="#FFC107"
+                android:padding="5dp">
 
-            <ImageButton
-                android:id="@+id/games"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:src="@drawable/games"
-                android:layout_gravity="center" />
+                <ImageButton
+                    android:id="@+id/games"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:src="@drawable/games"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Приставки"
-                android:id="@+id/textView9"
-                android:textSize="15dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-        </GridLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Приставки"
+                    android:id="@+id/textView9"
+                    android:textSize="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#ffffff"
+                    android:layout_below="@+id/games"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
 
+        </TableRow>
 
-    </GridLayout>
- </LinearLayout>
-</ScrollView>
+    </TableLayout>
+
+</RelativeLayout>

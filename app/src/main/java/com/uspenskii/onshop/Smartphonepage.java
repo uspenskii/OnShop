@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.GridView;
 
 import com.google.gson.JsonArray;
@@ -90,13 +91,12 @@ public class Smartphonepage extends AppCompatActivity {
     }
 
     public static Bitmap LoadImageFromWebOperations(final String url) {
-        Bitmap bmp;
 
         try {
             InputStream in = new URL(url).openStream();
             return BitmapFactory.decodeStream(in);
         } catch (Exception e) {
-            // log error
+            Log.e("log" ,e.getLocalizedMessage());
         }
         return null;
     }
