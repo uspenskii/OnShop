@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.uspenskii.onshop.R;
@@ -92,6 +93,18 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
         rootView.findViewById(R.id.RelativeLayout7).setOnClickListener(this);
         rootView.findViewById(R.id.RelativeLayout8).setOnClickListener(this);
         rootView.findViewById(R.id.RelativeLayout9).setOnClickListener(this);
+
+
+        final EditText editText = (EditText) rootView.findViewById(R.id.editText);
+        rootView.findViewById(R.id.editText);
+        rootView.findViewById(R.id.imageButtonSeach).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("search_request", String.valueOf(editText.getText()) ));
+            }
+        });
+
 
 
         return rootView;

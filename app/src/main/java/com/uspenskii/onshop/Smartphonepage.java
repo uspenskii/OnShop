@@ -40,8 +40,14 @@ public class Smartphonepage extends AppCompatActivity {
             public void run() {
                 try {
 
+                    String sURL;
+                    if(getIntent().getStringExtra("type") != null)
+                        sURL = "http://192.168.0.95:5000/api?action=getGoods&type="+  getIntent().getStringExtra("type");
+                    else{
+                        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAA");
+                        sURL = "http://192.168.0.95:5000/api?action=searchRequest&search="+  getIntent().getStringExtra("search_request");
+                    }
 
-                    String sURL = "http://192.168.0.95:5000/api?action=getGoods&type="+  getIntent().getStringExtra("type");
                     URL url = new URL(sURL);
                     HttpURLConnection request = (HttpURLConnection) url.openConnection();
                     request.connect();
