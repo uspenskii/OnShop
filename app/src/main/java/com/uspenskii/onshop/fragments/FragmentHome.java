@@ -1,6 +1,7 @@
 package com.uspenskii.onshop.fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.RelativeLayout;
 import com.uspenskii.onshop.R;
 import com.uspenskii.onshop.Smartphonepage;
 
+import static com.uspenskii.onshop.R.id.container;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -20,12 +23,13 @@ import com.uspenskii.onshop.Smartphonepage;
  * Use the {@link FragmentHome#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentHome extends Fragment {
+public class FragmentHome extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private Context context;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -75,15 +79,20 @@ public class FragmentHome extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        RelativeLayout relativeLayout1 = (RelativeLayout) rootView.findViewById(R.id.RelativeLayout1);
-        relativeLayout1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(container.getContext(), Smartphonepage.class);
-                startActivity(intent);
 
-            }
-        });
+        context = container.getContext();
+
+
+        rootView.findViewById(R.id.RelativeLayout1).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout2).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout3).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout4).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout5).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout6).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout7).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout8).setOnClickListener(this);
+        rootView.findViewById(R.id.RelativeLayout9).setOnClickListener(this);
+
 
         return rootView;
     }
@@ -101,16 +110,42 @@ public class FragmentHome extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.RelativeLayout1:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","CellPhone"));
+                break;
+            case R.id.RelativeLayout2:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param1"));
+                break;
+            case R.id.RelativeLayout3:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param2"));
+                break;
+            case R.id.RelativeLayout4:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param3"));
+                break;
+            case R.id.RelativeLayout5:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param4"));
+                break;
+            case R.id.RelativeLayout6:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param5"));
+                break;
+            case R.id.RelativeLayout7:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param6"));
+                break;
+            case R.id.RelativeLayout8:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param7"));
+                break;
+            case R.id.RelativeLayout9:
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param8"));
+                break;
+
+        }
+
+    }
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);

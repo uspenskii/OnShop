@@ -41,7 +41,7 @@ public class Smartphonepage extends AppCompatActivity {
                 try {
 
 
-                    String sURL = "http://192.168.0.106:5000/api?action=getGoods";
+                    String sURL = "http://192.168.0.95:5000/api?action=getGoods&type="+  getIntent().getStringExtra("type");
                     URL url = new URL(sURL);
                     HttpURLConnection request = (HttpURLConnection) url.openConnection();
                     request.connect();
@@ -52,7 +52,7 @@ public class Smartphonepage extends AppCompatActivity {
                     JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object.
 
 
-                    final JsonArray jsonArray = rootobj.get("GoodsList").getAsJsonArray();
+                    final JsonArray jsonArray = rootobj.get("list").getAsJsonArray();
 
                     final ArrayList<Drawable> images = new ArrayList<>();
                     final ArrayList<String> names = new ArrayList<>();
