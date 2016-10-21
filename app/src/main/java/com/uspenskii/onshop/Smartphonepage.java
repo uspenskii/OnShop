@@ -42,10 +42,10 @@ public class Smartphonepage extends AppCompatActivity {
 
                     String sURL;
                     if(getIntent().getStringExtra("type") != null)
-                        sURL = "http://192.168.0.95:5000/api?action=getGoods&type="+  getIntent().getStringExtra("type");
+                        sURL = "http://192.168.0.106:5000/api?action=getGoods&type="+  getIntent().getStringExtra("type");
                     else{
                         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAA");
-                        sURL = "http://192.168.0.95:5000/api?action=searchRequest&search="+  getIntent().getStringExtra("search_request");
+                        sURL = "http://192.168.0.106:5000/api?action=searchRequest&search="+  getIntent().getStringExtra("search_request");
                     }
 
                     URL url = new URL(sURL);

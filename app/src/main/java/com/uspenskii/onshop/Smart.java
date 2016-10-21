@@ -11,4 +11,5 @@ public class Smart extends AppCompatActivity {
         setContentView(R.layout.smartphone);
 
     }
+
 }

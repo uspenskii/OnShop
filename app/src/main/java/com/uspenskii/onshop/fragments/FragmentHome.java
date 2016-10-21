@@ -9,12 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 
+import com.uspenskii.onshop.LoginActivity;
 import com.uspenskii.onshop.R;
 import com.uspenskii.onshop.Smartphonepage;
-
-import static com.uspenskii.onshop.R.id.container;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -131,7 +129,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(context, Smartphonepage.class).putExtra("type","CellPhone"));
                 break;
             case R.id.RelativeLayout2:
-                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param1"));
+                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","Tablet"));
                 break;
             case R.id.RelativeLayout3:
                 startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param2"));
@@ -152,7 +150,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param7"));
                 break;
             case R.id.RelativeLayout9:
-                startActivity(new Intent(context, Smartphonepage.class).putExtra("type","param8"));
+                startActivity(new Intent(context, LoginActivity.class).putExtra("type","param8"));
                 break;
 
         }

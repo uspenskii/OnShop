@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
+
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -21,7 +22,10 @@
         <activity
             android:name=".Smartphonepage">
         </activity>
-
+        <activity android:name=".Pager.ViewPagerSampleActivity">
+        </activity>
+        <activity android:name="com.uspenskii.onshop.LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="com.uspenskii.onshop.SignupActivity" android:theme="@style/AppTheme.Dark" />
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 
